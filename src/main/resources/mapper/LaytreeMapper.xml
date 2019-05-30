@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="www.tree.com.dao.LaytreeMapper">
+
+    <select id="findRoot" resultType="www.tree.com.bean.Laytree">
+        SELECT * FROM laytree WHERE pid = 0
+    </select>
+
+    <select id="findChild" resultType="www.tree.com.bean.Laytree">
+        SELECT id,name,pid,spread,href hrefMD FROM laytree WHERE pid = #{id}
+    </select>
+
+</mapper>
